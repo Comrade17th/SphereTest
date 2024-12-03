@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace _Project.Scripts
 {
     public class CorridorMover : MonoBehaviour
     {
-        [SerializeField] private List<CorridorSection> _sections; // remove serialize
         [SerializeField] private CorridorSectionSpawner _spawner; // to construct
-        
         [SerializeField] private float _deadLineY = -5; // TO SD
         [SerializeField] private float _targetSpeed = 1;
         [SerializeField] private float _speed = 0; //to SD
-        [SerializeField] private float _sectionOffset;// to SD
+        [SerializeField] private float _sectionOffset = 1;// to SD
         [SerializeField] private float _startSectionsCount = 15;
+        
+        private List<CorridorSection> _sections = new ();
 
         private void Start()
         {
@@ -41,6 +39,7 @@ namespace _Project.Scripts
         public void ResetLevel()
         {
             _speed = 0;
+            
             while (_sections.Count > 0)
             {
                 Destroy(_sections[0].gameObject);
