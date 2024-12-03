@@ -1,9 +1,10 @@
 using System;
 using JetBrains.Annotations;
+using UnityEngine;
 
-namespace _Project.Scripts
+namespace _Project.Scripts.Player
 {
-    public class Wallet
+    public class Wallet : MonoBehaviour
     {
         private int _coins;
 
@@ -14,8 +15,11 @@ namespace _Project.Scripts
             get => _coins;
             private set
             {
-                if(value != _coins)
+                if (value != _coins)
+                {
+                    _coins = value;
                     CoinsChanged?.Invoke(_coins);
+                }
             }
         }
         
@@ -25,7 +29,7 @@ namespace _Project.Scripts
             if (coin.Value <= 0) throw new ArgumentException(nameof(coin.Value));
             
             Coins += coin.Value;
-            UnityEngine.Object.Destroy(coin.gameObject);
+            Destroy(coin.gameObject);
         }
     }
 }

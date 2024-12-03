@@ -1,7 +1,12 @@
-﻿namespace _Project.Common.Infrastructure
+﻿using Zenject;
+
+namespace _Project.Common.Infrastructure
 {
-    public class BootstrapInstaller
+    public class BootstrapInstaller : MonoInstaller
     {
-        
+        public override void InstallBindings()
+        {
+            
+        }
     }
 }

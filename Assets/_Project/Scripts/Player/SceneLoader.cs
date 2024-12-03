@@ -1,7 +1,13 @@
-﻿namespace _Project.Scripts.Player
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+
+namespace _Project.Scripts.Player
 {
-    public class SceneLoader
+    public class SceneLoader : MonoBehaviour
     {
-        
+        private void Start()
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 }
