@@ -1,6 +1,8 @@
-﻿namespace _Project.Scripts
+﻿using UnityEngine;
+
+namespace _Project.Scripts
 {
-    public class CorridorSection : CorridorItem
+    public class CorridorSection : MonoBehaviour
     {
         
     }
