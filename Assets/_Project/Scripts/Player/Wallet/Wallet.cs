@@ -1,7 +1,8 @@
 using System;
+using _Project.Scripts.Entities;
 using UnityEngine;
 
-namespace _Project.Scripts.Player
+namespace _Project.Scripts.Player.Wallet
 {
     public class Wallet
     {

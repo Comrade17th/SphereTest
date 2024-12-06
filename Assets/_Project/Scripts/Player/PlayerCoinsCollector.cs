@@ -1,4 +1,5 @@
 ﻿using System;
+using _Project.Scripts.Entities;
 using JetBrains.Annotations;
 using UnityEngine;
 using Zenject;
@@ -8,10 +9,10 @@ namespace _Project.Scripts.Player
     [RequireComponent(typeof(Collider))]
     public class PlayerCoinsCollector : MonoBehaviour
     {
-        private Wallet _wallet;
+        private Wallet.Wallet _wallet;
         
         [Inject]
-        private void Construct(Wallet wallet)
+        private void Construct(Wallet.Wallet wallet)
         {
             _wallet = wallet;
         }

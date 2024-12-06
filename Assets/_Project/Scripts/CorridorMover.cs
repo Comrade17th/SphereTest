@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using _Project.Scripts.Entities;
+using _Project.Scripts.Spawners;
 using UnityEngine;
 
 namespace _Project.Scripts

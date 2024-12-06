@@ -1,4 +1,5 @@
 ﻿using System;
+using _Project.Scripts.Entities;
 using UnityEngine;
 using Zenject;
 
@@ -9,10 +10,10 @@ namespace _Project.Scripts.Player
         typeof(Rigidbody))]
     public class Player : MonoBehaviour
     {
-        private Health _health;
+        private Health.Health _health;
         
         [Inject]
-        private void Construct(Health health)
+        private void Construct(Health.Health health)
         {
             _health = health;
         }

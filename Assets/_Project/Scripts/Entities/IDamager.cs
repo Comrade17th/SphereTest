@@ -1,4 +1,4 @@
-namespace _Project.Scripts.Player
+namespace _Project.Scripts.Entities
 {
 	public interface IDamager
 	{

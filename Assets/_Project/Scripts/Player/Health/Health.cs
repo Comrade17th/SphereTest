@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace _Project.Scripts.Player
+namespace _Project.Scripts.Player.Health
 {
 	public class Health
 	{

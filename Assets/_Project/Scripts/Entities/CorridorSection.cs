@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using _Project.Scripts.Player;
 using UnityEngine;
 
-namespace _Project.Scripts
+namespace _Project.Scripts.Entities
 {
     public class CorridorSection : MonoBehaviour
     {

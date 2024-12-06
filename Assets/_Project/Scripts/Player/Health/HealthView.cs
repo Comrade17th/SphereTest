@@ -1,9 +1,8 @@
-using _Project.Scripts.Player;
 using TMPro;
 using UnityEngine;
 using Zenject;
 
-namespace _Project.Scripts
+namespace _Project.Scripts.Player.Health
 {
 	public class HealthView : MonoBehaviour
 	{

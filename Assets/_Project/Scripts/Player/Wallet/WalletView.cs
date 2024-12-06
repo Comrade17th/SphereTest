@@ -1,15 +1,14 @@
-﻿using System;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using Zenject;
 
-namespace _Project.Scripts.Player
+namespace _Project.Scripts.Player.Wallet
 {
     public class WalletView : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _coins;
         
-        private Wallet _wallet;
+        private Scripts.Player.Wallet.Wallet _wallet;
 
         private void OnEnable()
         {
@@ -21,7 +20,7 @@ namespace _Project.Scripts.Player
             _wallet.CoinsChanged -= Write;
 
         [Inject]
-        private void Construct(Wallet wallet)
+        private void Construct(Scripts.Player.Wallet.Wallet wallet)
         {
             _wallet = wallet;
             _wallet.CoinsChanged += Write;
