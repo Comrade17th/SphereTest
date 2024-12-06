@@ -11,13 +11,15 @@ namespace _Project.Common.Infrastructure
         
         public override void InstallBindings()
         {
-            Wallet wallet = Container
-                .InstantiatePrefabForComponent<Wallet>(_playerPrefab, _startPoint.position, Quaternion.identity, null);
-
-            Container
-                .Bind<Wallet>()
-                .FromInstance(wallet)
-                .AsSingle();
+            Container.Bind<Wallet>().AsSingle();
+            
+            Player player = Container
+                .InstantiatePrefabForComponent<Player>(_playerPrefab, _startPoint.position, Quaternion.identity, null);
+            
+            // Container
+            //     .Bind<Wallet>()
+            //     .FromInstance(wallet)
+            //     .AsSingle();
         }
     }
 }

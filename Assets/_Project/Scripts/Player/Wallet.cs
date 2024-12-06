@@ -1,10 +1,9 @@
 using System;
-using JetBrains.Annotations;
 using UnityEngine;
 
 namespace _Project.Scripts.Player
 {
-    public class Wallet : MonoBehaviour
+    public class Wallet
     {
         private int _coins;
 
@@ -23,13 +22,13 @@ namespace _Project.Scripts.Player
             }
         }
         
-        public void Collect([NotNull] Coin coin)
+        public void Collect(Coin coin)
         {
             if (coin == null) throw new ArgumentNullException(nameof(coin));
             if (coin.Value <= 0) throw new ArgumentException(nameof(coin.Value));
             
             Coins += coin.Value;
-            Destroy(coin.gameObject);
+            GameObject.Destroy(coin.gameObject);
         }
     }
 }

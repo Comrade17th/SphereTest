@@ -9,11 +9,11 @@ namespace _Project.Scripts.Player
     {
         [SerializeField] private TextMeshProUGUI _coins;
         
-        [SerializeField] private Wallet _wallet;
+        private Wallet _wallet;
 
         private void OnEnable()
         {
-            if (_wallet)
+            if (_wallet != null)
                 _wallet.CoinsChanged += Write;
         }
 
