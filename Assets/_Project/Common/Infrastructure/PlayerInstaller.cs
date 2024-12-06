@@ -4,7 +4,7 @@ using Zenject;
 
 namespace _Project.Common.Infrastructure
 {
-    public class LocationInstaller : MonoInstaller
+    public class PlayerInstaller : MonoInstaller
     {
         [SerializeField] private Transform _startPoint;
         [SerializeField] private GameObject _playerPrefab;
@@ -12,6 +12,7 @@ namespace _Project.Common.Infrastructure
         public override void InstallBindings()
         {
             Container.Bind<Wallet>().AsSingle();
+            Container.Bind<Health>().AsSingle();
             
             Player player = Container
                 .InstantiatePrefabForComponent<Player>(_playerPrefab, _startPoint.position, Quaternion.identity, null);

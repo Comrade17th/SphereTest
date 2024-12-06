@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
+using _Project.Scripts.Player;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace _Project.Scripts
 {
@@ -23,15 +23,6 @@ namespace _Project.Scripts
                 _leftWall.position = RandomGenerator.GetPositionX(_leftWall,_leftWall, _minBorderLeft);
                 _rightWall.position = RandomGenerator.GetPositionX(_rightWall, _minBorderRight, _rightWall);
             }
-        }
-    }
-
-    public static class RandomGenerator
-    {
-        public static Vector3 GetPositionX(Transform original, Transform minInclusive, Transform maxInclusive)
-        {
-            float randomX = Random.Range(minInclusive.position.x, maxInclusive.position.x);
-            return new Vector3(randomX, original.position.y, original.position.z);
         }
     }
 }
