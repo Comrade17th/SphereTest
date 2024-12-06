@@ -9,5 +9,13 @@ namespace _Project.Scripts
 			float randomX = Random.Range(minInclusive.position.x, maxInclusive.position.x);
 			return new Vector3(randomX, original.position.y, original.position.z);
 		}
+
+		public static bool CheckChanceFromHundred(float chance)
+		{
+			float hundredChance = 100;
+			float randomValue =Random.Range(0, hundredChance);
+
+			return randomValue < chance;
+		}
 	}
 }

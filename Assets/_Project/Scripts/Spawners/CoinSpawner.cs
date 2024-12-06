@@ -8,7 +8,7 @@ namespace _Project.Scripts.Spawners
 
 		public void Spawn(Vector3 at, Transform parent)
 		{
-			GameObject coin = Instantiate(prefab, at, Quaternion.identity, parent);
+			GameObject coin = Instantiate(prefab, at, prefab.transform.rotation, parent);
 		}
 	}
 }
