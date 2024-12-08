@@ -39,11 +39,6 @@ namespace _Project.Scripts.EnviromentMover
             _speed = 0;
         }
 
-        private void Start()
-        {
-            StartLevel();
-        }
-
         private void Update()
         {
             if(_speed <= 0)

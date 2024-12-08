@@ -257,73 +257,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157999780}
   m_CullTransparentMesh: 1
---- !u!1 &372737188
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 372737189}
-  - component: {fileID: 372737190}
-  - component: {fileID: 372737191}
-  m_Layer: 0
-  m_Name: CorridorMover
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &372737189
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 372737188}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &372737190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 372737188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cb093d6fa7b4ffb92b75b28a9cfacf0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spawner: {fileID: 372737191}
-  _deadLineY: -15
-  _targetSpeed: 1
-  _speed: 0
-  _sectionOffset: 9
-  _startSectionsCount: 5
---- !u!114 &372737191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 372737188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 802816687a92462c9a1bdeb950229782, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sectionsPrefabs:
-  - {fileID: 2394765139526473338, guid: 01cee3c153c584a5296c10eb760b0fd6, type: 3}
-  - {fileID: 2394765139526473338, guid: 7ec59edc2ffe142e9a5e9ab5778efd7b, type: 3}
-  - {fileID: 2394765139526473338, guid: 84f989a1442a949e9ac2b5d076182ea6, type: 3}
 --- !u!1 &427313969
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,6 +597,9 @@ MonoBehaviour:
   _playerPrefab: {fileID: 4830682443053562220, guid: d4788bd0f7d071a47bb7e097775d5f16, type: 3}
   _coinSpawnerPrefab: {fileID: 450643574909393517, guid: ad13803c6783b492598034411a7fa24f, type: 3}
   _obstucleSpawnerPrefab: {fileID: 6763315154628029478, guid: 5f3d880c9e3e7484c9b8e101966ac4ca, type: 3}
+  _startWindowPrefab: {fileID: 3896856123770906367, guid: 93f65dfe426be4dd2b4ebe547f982889, type: 3}
+  _endGameWindowPrefab: {fileID: 7466378192095146232, guid: 5b576356fd6a34d1aac423b2516abe28, type: 3}
+  _corridorMoverPrefab: {fileID: 318161874906516612, guid: 32b181b28c1754acd997821aac52c91b, type: 3}
 --- !u!1 &770523794
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,7 +613,7 @@ GameObject:
   - component: {fileID: 770523796}
   - component: {fileID: 770523795}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: HUD (Canvas)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1097,7 +1033,6 @@ SceneRoots:
   - {fileID: 963194228}
   - {fileID: 705507995}
   - {fileID: 1232957775}
-  - {fileID: 372737189}
   - {fileID: 731341252}
   - {fileID: 770523798}
   - {fileID: 2102917999}

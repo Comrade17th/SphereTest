@@ -35,8 +35,6 @@ namespace _Project.Scripts.Player.Health
 			
 			Max = max;
 			Current = Max;
-			
-			Debug.Log($"{Current}");
 		}
 
 		public async void TakeDamage(int damage = 0)
