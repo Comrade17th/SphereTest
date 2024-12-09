@@ -1,12 +1,11 @@
 using System;
 using System.Threading.Tasks;
-using UnityEngine;
 
 namespace _Project.Scripts.Player.Health
 {
 	public class Health
 	{
-		private int _godModeMiliseconds = 1000;
+		private int _godModeMilliseconds = 1000;
 		private int _current;
 		private bool _isGodMode;
 		
@@ -14,7 +13,7 @@ namespace _Project.Scripts.Player.Health
 
 		public event Action Zero;
 		
-		public int Max { get; private set; }
+		public int Max { get; }
 		public int Current
 		{
 			get => _current;
@@ -42,7 +41,8 @@ namespace _Project.Scripts.Player.Health
 			if (damage < 0)
 				throw new ArgumentOutOfRangeException(nameof(damage));
 
-			if (_isGodMode == false)
+			if (_isGodMode == false &&
+			    Current > 0)
 			{
 				Current -= damage;
 				await EnableGodMode();
@@ -55,7 +55,7 @@ namespace _Project.Scripts.Player.Health
 		private async Task EnableGodMode()
 		{
 			_isGodMode = true;	
-			await Task.Delay(_godModeMiliseconds);
+			await Task.Delay(_godModeMilliseconds);
 			_isGodMode = false;
 		}
 	}

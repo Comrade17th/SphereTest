@@ -33,12 +33,7 @@ namespace _Project.Scripts.EnviromentMover
             _speedDifficulty.NewSpeedReaching += NewSpeedReachingHandler;
             _health.Zero += OnHealthZero;
         }
-
-        private void OnHealthZero()
-        {
-            _speed = 0;
-        }
-
+        
         private void Update()
         {
             if(_speed <= 0)
@@ -49,6 +44,9 @@ namespace _Project.Scripts.EnviromentMover
 
             DestroyUnderDeadLine();
         }
+
+        private void OnHealthZero() =>
+            _speed = 0;
 
         public void StartLevel()
         {
@@ -67,16 +65,14 @@ namespace _Project.Scripts.EnviromentMover
             }
 
             for (int i = 0; i < StartSectionsCount; i++)
-            {
                 _sections.Add(_spawner.Spawn(GetSpawnPosition()));
-            }
         }
 
         private void NewSpeedReachingHandler(float speedMultiplyer)
         {
             RaiseSpeed(speedMultiplyer);
         }
-        
+
         private async Task RaiseSpeed(float speedMultiplyer)
         {
             int millisecondsInSecond = 1000;
@@ -113,8 +109,8 @@ namespace _Project.Scripts.EnviromentMover
         {
             if (_sections.Count > 0)
                 return _sections[_sections.Count - 1].transform.position + new Vector3(0, SectionOffset, 0);
-            else
-                return Vector3.zero;
+            
+            return Vector3.zero;
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using _Project.Scripts.Entities;
+﻿using _Project.Scripts.Entities;
 using UnityEngine;
 using Zenject;
 
@@ -13,10 +12,8 @@ namespace _Project.Scripts.Player
         private Health.Health _health;
         
         [Inject]
-        private void Construct(Health.Health health)
-        {
+        private void Construct(Health.Health health) =>
             _health = health;
-        }
 
         private void OnTriggerEnter(Collider other)
         {

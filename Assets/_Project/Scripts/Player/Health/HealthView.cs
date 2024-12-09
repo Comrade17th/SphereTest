@@ -27,9 +27,7 @@ namespace _Project.Scripts.Player.Health
 			_health.CurrentChanged += Write;
 		}
 
-		private void Write(int amount)
-		{
+		private void Write(int amount) =>
 			_field.text = $"Health: {amount}";
-		}
 	}
 }

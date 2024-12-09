@@ -26,9 +26,7 @@ namespace _Project.Scripts.Player.Wallet
             _wallet.CoinsChanged += Write;
         }
 
-        private void Write(int amount)
-        {
+        private void Write(int amount) =>
             _coins.text = $"Coins: {amount}";
-        }
     }
 }

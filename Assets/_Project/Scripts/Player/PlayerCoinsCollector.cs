@@ -11,19 +11,15 @@ namespace _Project.Scripts.Player
         private Wallet.Wallet _wallet;
         
         [Inject]
-        private void Construct(Wallet.Wallet wallet)
-        {
+        private void Construct(Wallet.Wallet wallet) =>
             _wallet = wallet;
-        }
-        
+
         private void OnTriggerEnter( Collider other)
         {
             if (other == null) throw new ArgumentNullException(nameof(other));
             
             if (other.TryGetComponent(out Coin coin))
-            {
                 _wallet.Collect(coin);
-            }
         }
     }
 }

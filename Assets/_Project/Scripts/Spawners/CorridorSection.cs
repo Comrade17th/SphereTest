@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using _Project.Scripts.Spawners;
 using UnityEngine;
 
-namespace _Project.Scripts.Entities
+namespace _Project.Scripts.Spawners
 {
     public class CorridorSection : MonoBehaviour
     {

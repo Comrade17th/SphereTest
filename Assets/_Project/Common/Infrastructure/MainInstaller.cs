@@ -1,12 +1,10 @@
-﻿using _Project.Scripts;
-using _Project.Scripts.EnviromentMover;
+﻿using _Project.Scripts.EnviromentMover;
 using _Project.Scripts.Player;
 using _Project.Scripts.Player.Health;
 using _Project.Scripts.Player.Wallet;
 using _Project.Scripts.Spawners;
 using _Project.Scripts.UI;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Zenject;
 
 namespace _Project.Common.Infrastructure

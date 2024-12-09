@@ -20,14 +20,10 @@ namespace _Project.Scripts.UI
 			_restartButton.onClick.AddListener(OnRestart);
 		}
 
-		private void OnRestart()
-		{
+		private void OnRestart() =>
 			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-		}
 
-		private void OnHealthZero()
-		{
+		private void OnHealthZero() =>
 			gameObject.SetActive(true);
-		}
 	}
 }

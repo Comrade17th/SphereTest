@@ -9,6 +9,7 @@ namespace _Project.Scripts.EnviromentMover
 	{
 		private readonly Wallet _wallet;
 		private readonly List<CoinsSpeedPair> _coinsSpeed;
+		
 		private int _currentCoinsReaching;
 
 		public event Action<float> NewSpeedReaching; 

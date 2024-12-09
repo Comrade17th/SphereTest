@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using _Project.Scripts.Entities;
 using UnityEngine;
 using Zenject;
 
@@ -24,6 +23,7 @@ namespace _Project.Scripts.Spawners
 			GameObject sectionPrefab = _sectionsPrefabs[Random.Range(0, _sectionsPrefabs.Count - 1)];
 			GameObject section = Instantiate(sectionPrefab, at, sectionPrefab.transform.rotation);
 			var corridorSection = section.GetComponent<CorridorSection>();
+			
 			corridorSection.Init(_coinSpawner, _obstucleSpawner);
 			return corridorSection;
 		}

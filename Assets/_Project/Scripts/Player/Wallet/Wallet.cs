@@ -26,6 +26,7 @@ namespace _Project.Scripts.Player.Wallet
         public void Collect(Coin coin)
         {
             if (coin == null) throw new ArgumentNullException(nameof(coin));
+            
             if (coin.Value <= 0) throw new ArgumentException(nameof(coin.Value));
             
             Coins += coin.Value;
