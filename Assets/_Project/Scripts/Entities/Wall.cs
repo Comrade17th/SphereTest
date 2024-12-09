@@ -1,5 +1,4 @@
 using _Project.Scripts.Entities;
-using _Project.Scripts.Player;
 using UnityEngine;
 
 namespace _Project.Scripts

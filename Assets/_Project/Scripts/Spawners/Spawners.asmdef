@@ -1,3 +1,4 @@
 {
-	"name": "Spawners"
+	"name": "Spawners",
+	"references":[ "GUID:991e5eb2f25e64976806a965af9b1341", "GUID:099e05809e264023b3450fbdfc8c119f" ]
 }

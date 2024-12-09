@@ -1,6 +1,5 @@
 ﻿using System;
 using _Project.Scripts.Entities;
-using JetBrains.Annotations;
 using UnityEngine;
 using Zenject;
 
@@ -17,7 +16,7 @@ namespace _Project.Scripts.Player
             _wallet = wallet;
         }
         
-        private void OnTriggerEnter([NotNull] Collider other)
+        private void OnTriggerEnter( Collider other)
         {
             if (other == null) throw new ArgumentNullException(nameof(other));
             

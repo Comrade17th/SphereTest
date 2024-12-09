@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using _Project.Scripts.Spawners;
 using UnityEngine;
-using Zenject;
 
 namespace _Project.Scripts.Entities
 {

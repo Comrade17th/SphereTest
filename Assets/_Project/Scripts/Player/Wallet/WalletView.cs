@@ -8,7 +8,7 @@ namespace _Project.Scripts.Player.Wallet
     {
         [SerializeField] private TextMeshProUGUI _coins;
         
-        private Scripts.Player.Wallet.Wallet _wallet;
+        private Wallet _wallet;
 
         private void OnEnable()
         {
@@ -20,7 +20,7 @@ namespace _Project.Scripts.Player.Wallet
             _wallet.CoinsChanged -= Write;
 
         [Inject]
-        private void Construct(Scripts.Player.Wallet.Wallet wallet)
+        private void Construct(Wallet wallet)
         {
             _wallet = wallet;
             _wallet.CoinsChanged += Write;
