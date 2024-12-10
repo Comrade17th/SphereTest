@@ -43,9 +43,9 @@ namespace _Project.Scripts.Spawners
             foreach (Transform spawnPoint in _spawnPoints)
             {
                 if (RandomGenerator.CheckChanceFromHundred(_coinSpawnChance))
-                    _coinSpawner.Spawn(spawnPoint.position, spawnPoint);
+                    _coinSpawner.Spawn(spawnPoint.position, transform);
                 else if(RandomGenerator.CheckChanceFromHundred(_bombSpawnChance))
-                    _obstucleSpawner.Spawn(spawnPoint.position, spawnPoint);
+                    _obstucleSpawner.Spawn(spawnPoint.position, transform);
             }
         }
     }
