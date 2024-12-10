@@ -16,8 +16,11 @@ namespace _Project.Scripts.Player.Wallet
                 _wallet.CoinsChanged += Write;
         }
 
-        private void OnDisable() => 
-            _wallet.CoinsChanged -= Write;
+        private void OnDisable()
+        {
+            if (_wallet != null)
+                _wallet.CoinsChanged -= Write;
+        }
 
         [Inject]
         private void Construct(Wallet wallet)

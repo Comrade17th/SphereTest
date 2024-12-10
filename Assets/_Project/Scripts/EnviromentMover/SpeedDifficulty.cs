@@ -8,8 +8,9 @@ namespace _Project.Scripts.EnviromentMover
 	public class SpeedDifficulty
 	{
 		private readonly Wallet _wallet;
-		private readonly List<CoinsSpeedPair> _coinsSpeed;
-		
+		private readonly Dictionary<int, float> _difficulties;
+		private Dictionary<int, float>.Enumerator _difficultiesEnumerator;
+
 		private int _currentCoinsReaching;
 
 		public event Action<float> NewSpeedReaching; 
@@ -19,27 +20,27 @@ namespace _Project.Scripts.EnviromentMover
 		{
 			_wallet = wallet;
 			_wallet.CoinsChanged += OnCoinsChanged;
-			
-			_coinsSpeed = new List<CoinsSpeedPair>()
+
+			_difficulties = new Dictionary<int, float>()
 			{
-				new CoinsSpeedPair(10, 1.5f),
-				new CoinsSpeedPair(25, 2f),
-				new CoinsSpeedPair(50, 3f),
-				new CoinsSpeedPair(100, 4f)
+				{10, 1.5f},
+				{25, 2f},
+				{50, 3f},
+				{100, 4f},
 			};
+
+			_difficultiesEnumerator = _difficulties.GetEnumerator();
+			_difficultiesEnumerator.MoveNext();
 		}
 
 		private void OnCoinsChanged(int coins)
 		{
-			if(_currentCoinsReaching >= _coinsSpeed.Count)
-				return;
-
-			CoinsSpeedPair currentPair = _coinsSpeed[_currentCoinsReaching];
+			KeyValuePair<int, float> currentPair = _difficultiesEnumerator.Current;
 			
-			if (coins == currentPair.Coins)
+			if (coins == currentPair.Key)
 			{
-				NewSpeedReaching?.Invoke(currentPair.Speed);
-				_currentCoinsReaching++;
+				NewSpeedReaching?.Invoke(currentPair.Value);
+				_difficultiesEnumerator.MoveNext();
 			}
 		}
 	}

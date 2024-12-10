@@ -16,8 +16,11 @@ namespace _Project.Scripts.Player.Health
 				_health.CurrentChanged += Write;
 		}
 
-		private void OnDisable() => 
-			_health.CurrentChanged -= Write;
+		private void OnDisable()
+		{
+			if (_health != null)
+				_health.CurrentChanged -= Write;
+		}
 
 		[Inject]
 		private void Construct(Health health)
