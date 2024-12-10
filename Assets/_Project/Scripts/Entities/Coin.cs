@@ -6,6 +6,6 @@ namespace _Project.Scripts.Entities
     [Serializable]
     public class Coin : MonoBehaviour
     {
-        [field: SerializeField] public int Value { get; private set; }
+        [SerializeField] public int Value = 1;
     }
 }
